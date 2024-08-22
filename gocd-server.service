@@ -3,9 +3,9 @@ Description=GoCD Server
 
 [Service]
 Type=forking
-User=go
-ExecStart=/home/gocd/go-server-23.5.0/bin/go-server start sysd
-ExecStop=/home/gocd/go-server-23.5.0/bin/go-server stop sysd
+User=gocd
+ExecStart=/home/go/go-server-23.5.0/bin/go-server start sysd
+ExecStop=/home/go/go-server-23.5.0/bin/go-server stop sysd
 KillMode=control-group
 Environment=SYSTEMD_KILLMODE_WARNING=true
 
