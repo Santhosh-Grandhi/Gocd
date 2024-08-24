@@ -29,7 +29,7 @@ STAT $?
 #STAT $?
 
 Heading "Update GoCD server in configuration file wrapper-properties.conf with gocd server ip address."
-su - gocd -c "sed -i 's/localhost/Gocdserverip/' go-agent-23.5.0/wrapper-config/wrapper-properties.conf"
+su - gocd -c "sed -i 's/localhost/gocd.devoperations.online/' go-agent-23.5.0/wrapper-config/wrapper-properties.conf"
 STAT $?
 
 #Heading "Exit from gocd user"
