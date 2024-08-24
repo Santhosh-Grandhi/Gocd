@@ -1,3 +1,5 @@
+source CommonFile.sh
+
 Heading "Install Java"
 dnf install java-17-openjdk.x86_64 -y
 STAT $?
