@@ -1,0 +1,13 @@
+[Unit]
+Description=GoCD Server
+
+[Service]
+Type=forking
+User=gocd
+ExecStart=/home/gocd/go-agent-23.5.0/bin/go-agent start sysd
+ExecStop=/home/gocd/go-agent-23.5.0/bin/go-agent stop sysd
+KillMode=control-group
+Environment=SYSTEMD_KILLMODE_WARNING=true
+
+[Install]
+WantedBy=multi-user.target
