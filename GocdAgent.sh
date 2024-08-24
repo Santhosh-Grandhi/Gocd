@@ -1,4 +1,5 @@
 source CommonFile.sh
+su - gocd -c 'rm -r -f go-agent-23.5.0'
 
 Heading "Install Java"
 dnf install java-17-openjdk.x86_64 -y
@@ -23,17 +24,17 @@ Heading "Copy Gocd Agent file"
 cp gocd-agent.service /etc/systemd/system/gocd-agent.service
 STAT $?
 
-Heading "Change User group"
-su - gocd
-STAT $?
+#Heading "Change User group"
+#su - gocd
+#STAT $?
 
 Heading "Update GoCD server in configuration file wrapper-properties.conf with gocd server ip address."
-sed -i 's/localhost/Gocdserverip/' go-agent-23.5.0/wrapper-config/wrapper-properties.conf
+su - gocd -c "sed -i 's/localhost/Gocdserverip/' go-agent-23.5.0/wrapper-config/wrapper-properties.conf"
 STAT $?
 
-Heading "Exit from gocd user"
-exit
-STAT $?
+#Heading "Exit from gocd user"
+#exit
+#STAT $?
 
 Heading "Reload Deamon"
 systemctl daemon-reload
