@@ -1,5 +1,5 @@
 source CommonFile.sh
-su - gocd -c 'rm -r -f go-server'
+su - gocd -c 'rm -r -f /tmp/go-server'
 
 Heading "Install Java"
 dnf install java-17-openjdk.x86_64 -y
