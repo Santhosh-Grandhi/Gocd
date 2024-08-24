@@ -13,11 +13,11 @@ fi
 STAT $?
 
 Heading "Download Gocd Server"
-curl -L -o /tmp/go-server.zip  https://download.gocd.org/binaries/23.5.0-18179/generic/go-server.zip
+curl -L -o /tmp/go-server-23.5.0-18179.zip  https://download.gocd.org/binaries/23.5.0-18179/generic/go-server-23.5.0-18179.zip
 STAT $?
 
 Heading "Unzip downloaded file using above created user"
-su - gocd -c 'unzip /tmp/go-server.zip'
+su - gocd -c 'unzip /tmp/go-server-23.5.0-18179.zip'
 STAT $?
 
 Heading "Copy Gocd Service file"
