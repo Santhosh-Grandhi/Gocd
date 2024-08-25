@@ -1,5 +1,4 @@
 source CommonFile.sh
-su - gocd -c 'rm -r -f go-agent-23.5.0'
 
 Heading "Install Java"
 dnf install java-17-openjdk.x86_64 -y

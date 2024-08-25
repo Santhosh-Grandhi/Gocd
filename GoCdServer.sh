@@ -12,12 +12,22 @@ if [ $? -ne 0 ]; then
 fi
 STAT $?
 
+Heading "Create Gocd Directory and change ownership"
+mkdir /gocd/
+chown gocd:gocd /gocd
+STAT $?
+
 Heading "Download Gocd Server"
 curl -L -o /tmp/go-server-23.5.0-18179.zip  https://download.gocd.org/binaries/23.5.0-18179/generic/go-server-23.5.0-18179.zip
 STAT $?
 
 Heading "Unzip downloaded file using above created user"
 su - gocd -c 'unzip /tmp/go-server-23.5.0-18179.zip'
+STAT $?
+
+Heading "Move unarchived file to gocd direcctory"
+cd /home/gocd
+mv mv go-server-23.5.0 /gocd/
 STAT $?
 
 Heading "Copy Gocd Service file"
