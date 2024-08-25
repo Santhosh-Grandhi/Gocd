@@ -26,8 +26,7 @@ su - gocd -c 'unzip /tmp/go-server-23.5.0-18179.zip'
 STAT $?
 
 Heading "Move unarchived file to gocd direcctory"
-cd /home/gocd
-mv mv go-server-23.5.0 /gocd/
+mv /home/gocd/go-server-23.5.0 /gocd/
 STAT $?
 
 Heading "Copy Gocd Service file"
