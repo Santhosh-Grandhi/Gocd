@@ -1,1 +1,1 @@
-echo HelloWorld
+echo "${component}"
